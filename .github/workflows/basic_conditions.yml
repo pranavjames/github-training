@@ -19,6 +19,6 @@ jobs:
           exit 1  # Simulate a build failure for testing
 
       - name: Run if build fails
-        if: steps.build.conclusion == 'failure'
+        if: failure()
         run: |
           echo "Previous step build project failed"
