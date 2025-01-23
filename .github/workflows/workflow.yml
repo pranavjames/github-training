@@ -10,14 +10,11 @@ jobs:
         steps:
           - name: Setup the Repo
             uses: actions/checkout@v4
-
-          - name: Setup Java JDK
-            uses: actions/setup-java@v4.6.0
-
+            
           - name: 
             uses: actions/setup-java@v4
             with:
-              distribution: 'temurin' 
+              distribution: 'oracle' 
               java-version: '21'
           
           - name: Print Java Version
