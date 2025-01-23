@@ -8,10 +8,9 @@ jobs:
     java-setup:
         runs-on: [ubuntu-latest]
         steps:
-          - name: Setup the Repo
-            uses: actions/checkout@v4
-            
-          - name: 
+          - uses: actions/checkout@v4
+
+          - name: Setup Java
             uses: actions/setup-java@v4
             with:
               distribution: 'oracle' 
