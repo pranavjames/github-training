@@ -17,7 +17,7 @@ jobs:
           - name: 
             uses: actions/setup-java@v4
             with:
-              distribution: 'temurin' 
+              distribution: 'oracle' 
               java-version: '21'
           
           - name: Print Java Version
