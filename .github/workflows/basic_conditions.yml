@@ -1,0 +1,23 @@
+name: Conditional Execution Workflow
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Project
+        run: |
+          echo "Building the project..."
+          exit 1  # Simulate a build failure for testing
+
+      - name: Run if build fails
+        if: failure()
+        run: |
+          echo "Previous step build project failed"
