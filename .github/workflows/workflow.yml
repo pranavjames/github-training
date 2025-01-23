@@ -1,0 +1,26 @@
+name: Main Workflow 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    java-setup:
+        runs-on: [ubuntu-latest]
+        steps:
+          - name: Setup the Repo
+            uses: actions/checkout@v4
+
+          - name: Setup Java JDK
+            uses: actions/setup-java@v4.6.0
+
+          - name: 
+            uses: actions/setup-java@v4
+            with:
+              distribution: 'temurin' 
+              java-version: '21'
+          
+          - name: Print Java Version
+            run: |
+                 java --version    
+  
