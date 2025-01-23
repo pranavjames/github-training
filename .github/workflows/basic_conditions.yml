@@ -1,4 +1,4 @@
-name: Conditional Execution Workflow
+name: Conditional Basic Execution Workflow
 
 on:
   push:
@@ -13,11 +13,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Project
+        id: build
         run: |
           echo "Building the project..."
           exit 1  # Simulate a build failure for testing
 
       - name: Run if build fails
-        if: failure()
+        if: steps.build.conclusion == 'failure'
         run: |
           echo "Previous step build project failed"
