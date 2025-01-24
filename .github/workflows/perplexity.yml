@@ -21,7 +21,9 @@ jobs:
 
       - name: Step Only Runs If Previous Command Succeeded
         if: ${{ success() }} # Runs only if all prior steps succeeded
-        run: echo "The previous command succeeded."
+        run: | 
+          echo "The previous command succeeded."
+          exit 1
 
       - name: Step Runs If Previous Command Failed
         if: ${{ failure() }} # Runs only if any prior step failed
