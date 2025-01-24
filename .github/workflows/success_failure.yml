@@ -25,29 +25,29 @@ jobs:
           echo "The previous command succeeded."
           exit 1
 
-      - name: Step Runs If Previous Command Failed
-        if: ${{ failure() }} # Runs only if any prior step failed
-        run: echo "The previous command failed."
+      # - name: Step Runs If Previous Command Failed
+      #   if: ${{ failure() }} # Runs only if any prior step failed
+      #   run: echo "The previous command failed."
 
-      - name: Always Run Step
-        if: ${{ always() }} # This step runs regardless of success or failure
-        run: echo "This step always runs."
+      # - name: Always Run Step
+      #   if: ${{ always() }} # This step runs regardless of success or failure
+      #   run: echo "This step always runs."
 
-      - name: "Check 1"
-        run: |
-          echo " Check 1"
+      # - name: "Check 1"
+      #   run: |
+      #     echo " Check 1"
       
-      - name: "Check 2 => Checking for failure"
-        if: ${{ failure() }}
-        run: |
-          echo " Check2"     
+      # - name: "Check 2 => Checking for failure"
+      #   if: ${{ failure() }}
+      #   run: |
+      #     echo " Check2"     
 
-      - name: "Check 3"
-        if: ${{ success() }}
-        run: |
-          echo " Check 3"
+      # - name: "Check 3"
+      #   if: ${{ success() }}
+      #   run: |
+      #     echo " Check 3"
       
-      - name: "Check 4"
-        run: |
-          echo " Check4"     
+      # - name: "Check 4"
+      #   run: |
+      #     echo " Check4"     
       
