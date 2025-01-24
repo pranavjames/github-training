@@ -18,8 +18,8 @@ jobs:
           echo "Building the project..."
           exit 1  # Simulate a build failure for testing
 
-    # Conditional execution at the job level
+    
       - name: Run if job fails
         if: ${{ failure() }}
         run: |
-          echo "Job has failed. The build project step failed."
+          echo "Previous step has failed. The build project step failed."
