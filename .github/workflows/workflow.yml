@@ -1,4 +1,4 @@
-name: Main Workflow 
+name: Training Basic Main Workflow 
 on:
   push:
     branches:
