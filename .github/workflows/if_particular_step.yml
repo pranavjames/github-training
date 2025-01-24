@@ -17,8 +17,8 @@ jobs:
         id: step_that_might_fail  # Assign an ID to this step
         run: |
           echo "Running command..."
-          exit 1  # Simulate failure (change to exit 0 to simulate success)
-        continue-on-error: true  # Allow the job to continue even if this step fails
+          exit 1  
+        continue-on-error: true  
 
       - name: "Handle Failure of Specific Step"
         if: ${{ steps.step_that_might_fail.outcome == 'failure' }}  # Check if the specific step failed
