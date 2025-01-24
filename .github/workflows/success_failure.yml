@@ -20,7 +20,7 @@ jobs:
         continue-on-error: true # Allow the job to continue even if this step fails
 
       - name: Step Only Runs If Previous Command Succeeded
-       if: ${{ success() }} # Runs only if all prior steps succeeded
+        if: ${{ success() }} # Runs only if all prior steps succeeded
         run: | 
           echo "The previous command succeeded."
           exit 1
