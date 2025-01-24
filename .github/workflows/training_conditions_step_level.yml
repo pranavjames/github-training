@@ -28,7 +28,7 @@ jobs:
           echo "Step2"
           echo "github.ref => ${{ github.ref }}"
 
-          echi "Print Event : ${{ github.event_name}}"
+          echo "Print Event : ${{ github.event_name}}"
 
         
       - name: "Step 3"
