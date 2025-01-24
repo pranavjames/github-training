@@ -43,6 +43,7 @@ jobs:
           echo " Check2"     
 
       - name: "Check 3"
+        if: ${{ success() }}
         run: |
           echo " Check 3"
       
