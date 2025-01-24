@@ -27,7 +27,14 @@ jobs:
         run: |
           echo "Step2"
           echo "github.ref => ${{ github.ref }}"
-          echo "Current Branch: ${GITHUB_REF#refs/heads/}"
+
+          echi "Print Event : ${{ github.event_name}}"
+
+        
+      - name: "Step 3"
+        if: ${{ github.event_name == 'pull_request' }}  # Condition for pull requests
+        run: |
+          echo "Step 4: This step runs only for pull requests targeting the main branch."  
         
           
 
