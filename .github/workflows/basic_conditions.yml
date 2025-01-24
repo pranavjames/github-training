@@ -18,12 +18,18 @@ jobs:
           echo "Building the project..."
           exit 1  # Simulate a build failure for testing
 
-    
+      - name: Check if previous step failed
+        if:  steps.build.conclusion == 'failure'
+        run: |
+           echo "Checked that previous step has failed"
+
+
+
       - name: Run if job fails
         if: ${{ failure() }}
         run: |
           echo "Previous step has failed. The build project step failed."
 
-      - name: After conditonal
+      - name: After conditonal  # It will be skipped
         run: |
            echo "last step"    
