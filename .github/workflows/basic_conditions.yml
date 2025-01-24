@@ -23,3 +23,7 @@ jobs:
         if: ${{ failure() }}
         run: |
           echo "Previous step has failed. The build project step failed."
+
+      - name: After conditonal
+        run: |
+           echo "last step"    
