@@ -1,0 +1,32 @@
+name: Conditional Steps Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Run a Command
+        id: run_command
+        run: |
+          echo "Running command..."
+          exit 1 # Simulate a failure
+        continue-on-error: true # Allow the job to continue even if this step fails
+
+      - name: Step Only Runs If Previous Command Succeeded
+        if: ${{ success() }} # Runs only if all prior steps succeeded
+        run: echo "The previous command succeeded."
+
+      - name: Step Runs If Previous Command Failed
+        if: ${{ failure() }} # Runs only if any prior step failed
+        run: echo "The previous command failed."
+
+      - name: Always Run Step
+        if: ${{ always() }} # This step runs regardless of success or failure
+        run: echo "This step always runs."

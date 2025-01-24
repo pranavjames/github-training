@@ -21,8 +21,6 @@ jobs:
       - name: "Step1"
         run: |
           echo "Step1"
-          echo "github.ref => ${{ github.ref }}"
-          echo "Current Branch: ${GITHUB_REF#refs/heads/}"
 
       - name: "Step2"
         if:  ${{ github.ref }} == "refs/heads/main"
@@ -30,3 +28,7 @@ jobs:
           echo "Step2"
           echo "github.ref => ${{ github.ref }}"
           echo "Current Branch: ${GITHUB_REF#refs/heads/}"
+        
+          
+
+
