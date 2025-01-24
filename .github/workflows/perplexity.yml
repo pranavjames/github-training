@@ -1,0 +1,30 @@
+name: Handle Specific Step Failure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v2
+
+      - name: "Run Command that Might Fail"
+        id: step_that_might_fail  # Assign an ID to this step
+        run: |
+          echo "Running command..."
+          exit 1  # Simulate failure (change to exit 0 to simulate success)
+        continue-on-error: true  # Allow the job to continue even if this step fails
+
+      - name: "Handle Failure of Specific Step"
+        if: ${{ steps.step_that_might_fail.outcome == 'failure' }}  # Check if the specific step failed
+        run: |
+          echo "The step 'Run Command that Might Fail' failed. Taking action..."
+          # Add your failure handling logic here, e.g., sending notifications or cleanup.
+
+      - name: "Step That Runs Regardless"
+        run: echo "This step runs no matter what."
