@@ -1,4 +1,4 @@
-name: Training success, failure, always
+name: success, failure, always
 
 on:
   push:
