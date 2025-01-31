@@ -1,4 +1,4 @@
-name: success, failure, always
+name: Day2 success, failure, always
 
 on:
   push:

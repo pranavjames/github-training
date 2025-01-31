@@ -1,11 +1,11 @@
-name: Env, With
+name: Day2 Env, With
 
 on: 
  push:
  workflow_dispatch:
 
 env:
-  DAY_OF_WEEK: Monday
+  WORKFLOW_LEVEL_ENV: Monday
 
 jobs:
      
@@ -20,6 +20,14 @@ jobs:
           First_Name: Mona 
 
         run: | 
-          echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
-          echo "${{ env.First_Name }}  $env.First_Name"
+          echo "$Greeting $First_Name. Today is $WORKFLOW_LEVEL_ENV!"
+          echo "${{ env.First_Name }}  "
+
+  input_job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Login to DockerHub
+        do it in the session
+        
        
