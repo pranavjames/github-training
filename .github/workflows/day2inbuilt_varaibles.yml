@@ -1,0 +1,38 @@
+
+name: Day2 Inbuilt variables
+
+on: 
+ push:
+ workflow_dispatch:
+
+
+jobs:
+
+    job1: 
+      runs-on: ubuntu-latest
+      steps:
+
+        - name: Github  Variables
+          run: |
+            echo " $GITHUB_EVENT_NAME "
+            echo " $GITHUB_RUN_NUMBER "
+            echo "workflow: ${{ github.workflow }}"                
+            echo "run_id: ${{ github.run_id }}"
+            echo "actor: ${{ github.actor }}"
+            echo "event_name: ${{ github.event_name }}"
+            echo "api_url: ${{ github.api_url }}"
+            echo "repository: ${{ github.repository }}"
+            echo "action: ${{ github.action }}"
+            echo "sha: ${{ github.sha }}"               
+            echo "event_path: ${{ github.event_path }}"
+            echo "job name: ${{github.job}}"
+        
+        - name: Runner Environment Variables
+          run: |
+        
+            echo "os: ${{runner.os}}"
+            echo "temp: ${{runner.temp}}"
+            echo "workspace ${{runner.workspace}}"
+            echo "runner_name ${{runner.name}}"
+            echo "runner environment: $RUNNER_ENVIRONMENT "
+            echo "runner_tool_cache: $RUNNER_TOOL_CACHE "
