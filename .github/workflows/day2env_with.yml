@@ -6,22 +6,27 @@ on:
 
 env:
   WORKFLOW_LEVEL_ENV: Monday
+  ALL_ENV: Environment Level
 
 jobs:
      
   greeting_job:
     runs-on: ubuntu-latest
     env: 
-      Greeting: Hello 
+      Greeting: Hello
+      ALL_ENV: Job Level
 
     steps: 
       - name: "Say Hello Mona it's Monday" 
         env: 
           First_Name: Mona 
+          ALL_ENV: Step Level
 
         run: | 
           echo "$Greeting $First_Name. Today is $WORKFLOW_LEVEL_ENV!"
           echo "${{ env.First_Name }}  "
+          echo "------------------------------"
+          echo "ALL ENV value => $ALL_ENV"
 
   input_job:
     runs-on: ubuntu-latest
