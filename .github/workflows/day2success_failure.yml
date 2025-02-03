@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      
 
 jobs:
   build:
@@ -24,6 +25,12 @@ jobs:
         run: | 
           echo "The previous command succeeded."
           exit 1
+
+
+
+
+
+
 
       # - name: Step Runs If Previous Command Failed
       #   if: ${{ failure() }} # Runs only if any prior step failed
