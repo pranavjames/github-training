@@ -20,7 +20,7 @@ jobs:
       - name: "Say Hello Mona it's Monday" 
         env: 
           First_Name: Mona 
-          ALL_ENV: Step Level
+         
 
         run: | 
           echo "$Greeting $First_Name. Today is $WORKFLOW_LEVEL_ENV!"
