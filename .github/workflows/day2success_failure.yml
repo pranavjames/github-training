@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      
+
 
 jobs:
   build:
@@ -20,25 +20,19 @@ jobs:
           exit 1 # Simulate a failure
         continue-on-error: true # Allow the job to continue even if this step fails
 
-      - name: Step Only Runs If Previous Command Succeeded
+      - name: Step Only Runs If Previous Step Succeeded
         if: ${{ success() }} # Runs only if all prior steps succeeded
         run: | 
-          echo "The previous command succeeded."
+          echo "The previous step succeeded."
           exit 1
 
+      - name: Step Runs If Previous Command Failed
+        if: ${{ failure() }} # Runs only if any prior step failed
+        run: echo "The previous command failed."
 
-
-
-
-
-
-      # - name: Step Runs If Previous Command Failed
-      #   if: ${{ failure() }} # Runs only if any prior step failed
-      #   run: echo "The previous command failed."
-
-      # - name: Always Run Step
-      #   if: ${{ always() }} # This step runs regardless of success or failure
-      #   run: echo "This step always runs."
+      - name: Always Run Step
+        if: ${{ always() }} # This step runs regardless of success or failure
+        run: echo "This step always runs."
 
       # - name: "Check 1"
       #   run: |
