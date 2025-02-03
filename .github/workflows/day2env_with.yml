@@ -28,11 +28,5 @@ jobs:
           echo "------------------------------"
           echo "ALL ENV value => $ALL_ENV"
 
-  # input_job:
-  #   runs-on: ubuntu-latest
-    
-  #   steps:
-  #     - name: Login to DockerHub
-  #       # do it in the session
         
        
