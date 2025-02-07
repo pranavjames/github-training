@@ -49,4 +49,9 @@ jobs:
           - name: Print Variables
             run: |
                 echo "MY_VAR: $MY_VAR"
+                echo "----------------------------"
+                echo "GITHUB_ENV: $GITHUB_ENV"
+                echo "----------------------------"
+                echo "MY_VAR: ${{ env.MY_VAR }}"
+                echo "----------------------------"
     
