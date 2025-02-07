@@ -1,0 +1,21 @@
+name: Day3 Webhook Event Trigger
+
+on:
+    repository_dispatch:
+        types:
+            - custom-event
+
+jobs:
+    webhook-event-job:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Step1
+              run: | 
+                echo "You have triggered a custom event"
+                echo "Received event type: ${{ github.event.action }}"
+                echo "Custom Payload: ${{ github.event.client_payload.key1 }}"
+
+            
+              
+               
