@@ -9,12 +9,17 @@ jobs:
 
         steps:
           - name: Create Text file
-            run: echo "This is a text file" > file.txt
+            run: | 
+              echo "This is a text file" > file.txt
+              ll
+              
+          - name: List files
+            run: ls       
     
-          - name: Upload Artifact
-            uses: actions/upload-artifact@v4
-            with:
-              name: file.txt 
+        #   - name: Upload Artifact
+        #     uses: actions/upload-artifact@v4
+        #     with:
+        #       name: file.txt 
                              
     downloading_artifact:
         runs-on: ubuntu-latest
