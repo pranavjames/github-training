@@ -26,10 +26,27 @@ jobs:
             uses: actions/download-artifact@v4
             with:
               path: file.txt
-    
+
+#  cd file.txt/artifact/file.txt
+
           - name: List files
             run: |
-                cd file.txt
+                
                 ls -la
                 cd artifact
                 ls -la
+
+###############################################
+
+    sharing_data_between_steps:
+        runs-on: ubuntu-latest
+        
+        steps:
+          - name: Create Variables
+            run: |
+                echo "MY_VAR=Variabel from step" >> $GITHUB_ENV
+
+          - name: Print Variables
+            run: |
+                echo "MY_VAR: $MY_VAR"
+    
