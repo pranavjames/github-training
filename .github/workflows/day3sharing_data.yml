@@ -28,4 +28,6 @@ jobs:
               path: file.txt
     
           - name: List files
-            run: cat file.txt
+            run: |
+                ls -la
+                
