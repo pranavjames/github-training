@@ -31,3 +31,5 @@ jobs:
             run: |
                 cd file.txt
                 ls -la
+                cd artifact
+                ls -la
