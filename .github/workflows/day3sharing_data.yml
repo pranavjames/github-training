@@ -11,8 +11,8 @@ jobs:
           - name: Create Text file
             run: | 
               echo "This is a text file" > file.txt
-              ll
-              
+              ls
+
           - name: List files
             run: ls       
     
