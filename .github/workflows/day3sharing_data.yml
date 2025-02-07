@@ -1,4 +1,4 @@
-name: Simple Workflow
+name: Day3 Sharing Data
 
 on: [push, workflow_dispatch]
 
@@ -6,7 +6,7 @@ jobs:
 
     uploading_artifact:
         runs-on: ubuntu-latest
-        
+
         steps:
           - name: Create Text file
             run: echo "This is a text file" > file.txt
