@@ -1,0 +1,32 @@
+# .github/workflows/reusable-workflow.yml
+name: Day3 Reusable Workflow
+on:
+  workflow_call:
+    
+    inputs:
+      input1:
+        required: true
+        type: string
+
+    secrets:
+      SECRET_TOKEN: 
+        required: true
+            
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Step inside the reusable workflow
+        run: | 
+          Data :  ${{ github.event.inputs.input1 }}
+          Secret : ${{ github.event.secrets.SECRET_TOKEN }}
+
+      - name: Accessing the Data
+        run: |
+          Data :  ${{ inputs.input1 }}
+          Secret: ${{ secrets.SECRET_TOKEN }}
+
+

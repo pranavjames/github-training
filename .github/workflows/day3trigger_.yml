@@ -16,6 +16,8 @@ jobs:
                 echo "Received event type: ${{ github.event.action }}"
                 echo "Custom Payload: ${{ github.event.client_payload.key1 }}"
 
+# curl -X POST -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: token ghp_hamar_token" -d "{\"event_type\": \"custom-event\", \"client_payload\": {\"key1\": \"value1\"}}" https://api.github.com/repos/pranavjames/github-training/dispatches                
+
             
               
                
