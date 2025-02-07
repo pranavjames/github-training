@@ -28,5 +28,4 @@ jobs:
               path: file.txt
     
           - name: List files
-            run: ls 
-        
+            run: cat file.txt
