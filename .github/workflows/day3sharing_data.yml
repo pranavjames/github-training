@@ -12,7 +12,7 @@ jobs:
             run: echo "This is a text file" > file.txt
     
           - name: Upload Artifact
-            uses: actions/upload-artifact@v5
+            uses: actions/upload-artifact@v4
             with:
               name: file.txt 
                              
@@ -22,7 +22,7 @@ jobs:
 
         steps:
           - name: Download Artifact
-            uses: actions/download-artifact@v5
+            uses: actions/download-artifact@v4
             with:
               name: file.txt
     
