@@ -9,4 +9,4 @@ jobs:
         with:
             input1: "This is input from calling workflow"
         secrets:
-            secret1: ${{ secrets.GITHUB_TOKEN }}
+            SECRET_TOKEN: ${{ secrets.GITHUB_TOKEN }}
