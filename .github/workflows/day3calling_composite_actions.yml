@@ -8,7 +8,7 @@ jobs:
 
         steps:
         - name: Call  print_actions
-          uses: ./actions/print_message
+          uses: ../actions/print_message@main
           with:
               message: "Hello from composite action!"
               SECRET_TOKEN: ${{ secrets.GITHUB_TOKEN }}
