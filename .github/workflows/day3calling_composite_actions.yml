@@ -1,6 +1,6 @@
 name: Day 3 Calling Composite Actions
 
-on: [workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
     call-composite-action:
