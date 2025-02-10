@@ -7,8 +7,11 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+        - name: Checkout the repository
+          uses: actions/checkout@v4
+
         - name: Call  print_actions
-          uses: ./actions/print_message@main
+          uses: ./actions/print_message
           with:
               message: "Hello from composite action!"
               SECRET_TOKEN: ${{ secrets.GITHUB_TOKEN }}
