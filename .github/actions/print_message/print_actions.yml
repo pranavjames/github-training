@@ -1,0 +1,31 @@
+name: 'Print Message'
+description: 'A composite action to print a message'
+inputs:
+  message:
+    description: 'A message to print'
+    required: false
+    default: "Default value of custom actions"
+
+  SECRET_TOKEN:
+    description: 'A secret token'
+    required: true    
+    
+          
+runs:
+  using: 'composite'
+  steps:
+    - name: Print the input message
+          
+      shell: bash   # required property
+      run: |
+        echo "The message is: ${{ inputs.message }}"  
+
+    - name: Step2
+      shell: bash   # required property
+      run: |
+        echo "Step2 in custom action"   
+
+    - name: Step3   
+      run: | 
+        echo "Secret: ${{ inputs.SECRET_TOKEN }}"
+        echo "Secret in current Repo : ${{ secrets.MY_SECRET}}"

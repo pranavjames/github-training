@@ -11,8 +11,6 @@ on:
     secrets:
       SECRET_TOKEN: 
         required: true
-            
-
 
 jobs:
   build:
@@ -28,5 +26,6 @@ jobs:
         run: |
           echo "Data :  ${{ inputs.input1 }}"
           echo "Secret: ${{ secrets.SECRET_TOKEN }}"
+          echo "Repo Token: ${{ secrets.MY_SECRET }}"
 
 
