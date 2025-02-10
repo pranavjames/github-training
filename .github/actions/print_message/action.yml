@@ -25,7 +25,8 @@ runs:
       run: |
         echo "Step2 in custom action"   
 
-    - name: Step3   
+    - name: Step3  
+      shell: bash 
       run: | 
         echo "Secret: ${{ inputs.SECRET_TOKEN }}"
         # echo "Secret in current Repo : ${{ secrets.MY_SECRET}}"   # will generate error
