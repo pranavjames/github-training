@@ -4,7 +4,7 @@ on: push
 
 jobs:
     build:
-        runs-on: [runner1]
+        runs-on: [runner1, runner2]
 
         steps:
         - name: Checkout code
