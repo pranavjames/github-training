@@ -1,10 +1,14 @@
-name: Self-Hosted Runner Workflow
+name: Day3 Matrix Strategy
 
 on: push
 
 jobs:
     build:
-        runs-on: [my_runner2]
+        runs-on: [self-hosted]
+
+        strategy:
+            matrix:
+                runner: [my_runner1, my_runner2]
 
         steps:
         - name: Checkout code
