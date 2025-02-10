@@ -1,0 +1,14 @@
+name: Self-Hosted Runner Workflow
+
+on: push
+
+jobs:
+    build:
+        runs-on: [runner1]
+
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Run a one-line script
+          run: echo "Hello, world!"
